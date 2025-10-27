@@ -41,7 +41,7 @@ const Hero = ({ dictionary }: HeroProps) => {
           {dictionary.hero.tagline}
         </p>
         <Link 
-          href={dictionary === en ? "/CV_GABRIEL_NOMO_EN.pdf" : "/CV_GABRIEL_NOMO_FR.pdf"} 
+          href={dictionary === en ? "/CV_NOMO_GABRIEL_EN.pdf" : "/CV_NOMO_GABRIEL_FR.pdf"} 
           download
           className="inline-block px-8 py-3 bg-accent-light dark:bg-accent text-white font-semibold rounded-lg shadow-lg hover:opacity-90 transition-transform duration-300 hover:scale-105"
         >

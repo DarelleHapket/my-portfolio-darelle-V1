@@ -24,6 +24,11 @@ export const fr = {
       title: "Stagiaire Développement Logiciel & IA",
       company: "CENADI",
       description: "Conception et développement d'un agent IA d'assistance à l'optimisation fiscale, intégré à une application full-stack (FastAPI & Next.js)."
+    },
+    'decatechs': {
+      title: "Stagiaire Développeur Symfony",
+      company: "Decatechs",
+      description: "Contribution au développement d'un ERP de gestion scolaire, en utilisant le framework Symfony pour implémenter de nouvelles fonctionnalités."
     }
   },
 
@@ -46,8 +51,8 @@ export const fr = {
   hero: {
     title: "NOMO BODIANGA GABRIEL",
     subtitle_1: "Développeur Full-Stack",
-    subtitle_2: "Spécialiste Laravel",
-    subtitle_3: "Spécialiste Next.js",
+    subtitle_2: "Développeur Back-End Laravel",
+    subtitle_3: "Développeur Front-End Next.js",
     tagline: "Je transforme des idées complexes en applications web robustes et évolutives, de l'architecture back-end à l'interface utilisateur.",
     download_cv: "Télécharger le CV",
   },

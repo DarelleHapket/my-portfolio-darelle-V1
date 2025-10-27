@@ -5,7 +5,7 @@ export const imaPlatform: Project = {
   id: "ima-platform",
   category: "professional",
   period: "2025",
-  mainImageUrl: "/images/projects/ima-main.jpg", // Mettez ici le chemin vers votre image
+  mainImageUrl: "/images/projects/ima.png", // Mettez ici le chemin vers votre image
   technologies: ["Laravel", "PHP", "MySQL", "Blade", "Bootstrap"],
   repoUrl: undefined, // Le dépôt est probablement privé
 };

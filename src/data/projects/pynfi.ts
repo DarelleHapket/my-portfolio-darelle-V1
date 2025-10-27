@@ -5,7 +5,7 @@ export const pynfi: Project = {
   id: "pynfi",
   category: "personal",
   period: "2025",
-  mainImageUrl: "/images/projects/pynfi-main.jpg",
+  mainImageUrl: "/images/projects/pynfi.png",
   technologies: ["Laravel", "Blade", "JavaScript"],
   liveUrl: "https://www.pynfi.com",
   repoUrl: "https://github.com/NOMO-Gabriel/Pynfi",

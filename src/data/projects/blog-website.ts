@@ -5,7 +5,7 @@ export const blogWebsite: Project = {
   id: "blog-website",
   category: "professional", 
   period: "2024",
-  mainImageUrl: "/images/projects/blog-website.jpg", 
+  mainImageUrl: "/images/projects/blog-image.png", 
   technologies: ["Symfony", "PHP", "MySQL", "Twig"],
   repoUrl: "https://github.com/NOMO-Gabriel/Blog",
 };

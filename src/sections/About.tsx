@@ -23,13 +23,13 @@ const About = ({ dictionary }: SectionProps) => {
             </p>
           </div>
         </div>
-        <div className="relative w-64 h-64 mx-auto md:w-full md:h-auto md:max-w-sm">
+        <div className="relative w-full max-w-sm mx-auto aspect-square"> 
           <Image
-            src="/images/profile-photo.jpg" // Mettez votre photo de profil ici
+            src="/images/about-photo.jpg"
             alt="Gabriel Nomo"
-            layout="fill"
-            objectFit="cover"
-            className="rounded-lg shadow-2xl"
+            fill // 'fill' est la nouvelle syntaxe pour layout="fill"
+            sizes="(max-width: 768px) 100vw, 33vw" // Optimisation pour Next.js
+            className="rounded-lg object-cover shadow-2xl"
           />
         </div>
       </div>

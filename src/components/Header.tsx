@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useLanguage } from '@/hooks/useLanguage';
 import LanguageSwitcher from './LanguageSwitcher';
 import ThemeSwitcher from './ThemeSwitcher';
+import Image from 'next/image';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -51,12 +52,19 @@ const Header = () => {
     >
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
         
-        {/* Logo */}
+        {/* Logo / Branding  */}
         <Link
           href="#home"
-          className="text-xl font-bold text-gray-900 dark:text-white hover:text-orange-600 dark:hover:text-orange-500 transition-colors"
+          className="flex items-center gap-3 text-xl font-bold text-light-text dark:text-dark-text hover:text-accent-light dark:hover:text-accent transition-colors"
         >
-          Gabriel Nomo
+          <Image
+            src="/images/profile-photo.jpg" // 2. Assurez-vous que ce chemin est correct
+            alt="Gabriel Nomo profile picture"
+            width={60} // 3. Définir la taille
+            height={60}
+            className="rounded-full object-cover" // 4. Rendre l'image ronde
+          />
+          <span>Gabriel Nomo</span>
         </Link>
 
         {/* Navigation Desktop */}

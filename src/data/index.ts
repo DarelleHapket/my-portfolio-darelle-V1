@@ -33,6 +33,7 @@ import { clubGi } from "./leadership/club-gi";
 // --Imports Experiences ---
 import { icorpExperience } from "./experience/icorp";
 import { cenadiExperience } from "./experience/cenadi";
+import { decatechsExperience } from "./experience/decatechs";
 
 
 // ============================================
@@ -76,4 +77,5 @@ export const leadershipData: Leadership[] = [
 export const experienceData: Experience[] = [
   icorpExperience,
   cenadiExperience,
+  decatechsExperience,
 ];

@@ -5,7 +5,7 @@ export const aiTaxAssistant: Project = {
   id: "ai-tax-assistant",
   category: "professional",
   period: "07-2025 – 09-2025",
-  mainImageUrl: "/images/projects/cenadi-main.jpg",
+  mainImageUrl: "/images/projects/fiscoai.png",
   technologies: ["FastAPI", "Python", "Next.js", "Tailwind CSS"],
   repoUrl: undefined,
 };

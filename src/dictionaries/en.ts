@@ -23,6 +23,11 @@ export const en = {
       title: "Software Development & AI Intern",
       company: "CENADI",
       description: "Designed and developed an AI agent for fiscal optimization, integrated into a full-stack application (FastAPI & Next.js)."
+    },
+    'decatechs': {
+      title: "Symfony Developer Intern",
+      company: "Decatechs",
+      description: "Contributed to the development of a school management ERP, using the Symfony framework to implement new features."
     }
   },
 
@@ -45,8 +50,8 @@ export const en = {
   hero: {
     title: "NOMO BODIANGA GABRIEL",
     subtitle_1: "Full-Stack Developer",
-    subtitle_2: "Laravel Specialist",
-    subtitle_3: "Next.js Specialist",
+    subtitle_2: "Back-End Laravel Developer",
+    subtitle_3: "Front-End Next.js Developer",
     tagline: "I transform complex ideas into robust and scalable web applications, from back-end architecture to the user interface.",
     download_cv: "Download CV",
   },
