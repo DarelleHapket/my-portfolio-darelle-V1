@@ -1,7 +1,6 @@
 // src/app/layout.tsx
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import { ThemeProvider } from '@/contexts/ThemeContext';
-// @ts-expect-error
 import "@/styles/global.css";
 import type { Metadata } from 'next';
 import Header from '@/components/Header';
