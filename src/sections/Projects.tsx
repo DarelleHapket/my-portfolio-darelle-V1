@@ -25,9 +25,13 @@ const FilterButton = ({ label, active, onClick }: { label: string; active: boole
   </button>
 );
 
-const Projects = () => {
+interface SectionProps {
+  dictionary: typeof en;
+}
+
+const Projects = ({ dictionary }: SectionProps)  => {
   const { locale } = useLanguage();
-  const dictionary = locale === 'fr' ? fr : en;
+  
 
   const [activeFilter, setActiveFilter] = useState<ProjectCategory | 'all'>('all');
 
