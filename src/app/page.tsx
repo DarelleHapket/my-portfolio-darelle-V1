@@ -1,22 +1,36 @@
 // src/app/page.tsx
-'use client';
+"use client";
 
-import { en } from '@/dictionaries/en'; 
+import { en } from '@/dictionaries/en';
 import { fr } from '@/dictionaries/fr';
 import { useLanguage } from '@/hooks/useLanguage';
-import Hero from '@/sections/Hero';
 
-// Ce n'est plus un composant async
+// Import de toutes les sections
+import Hero from '@/sections/Hero';
+import About from '@/sections/About';
+import Experience from '@/sections/Experience';
+import Projects from '@/sections/Projects';
+import Skills from '@/sections/Skills';
+import Leadership from '@/sections/Leadership';
+import Education from '@/sections/Education';
+import Certifications from '@/sections/Certifications';
+import Contact from '@/sections/Contact';
+
 export default function Home() {
-  // On utilise le hook pour obtenir la langue actuelle
   const { locale } = useLanguage();
   const dictionary = locale === 'fr' ? fr : en;
 
   return (
-    <main>
-     
+    <>
       <Hero dictionary={dictionary} />
-
-    </main>
+      <About dictionary={dictionary} />
+      <Experience dictionary={dictionary} />
+      <Projects dictionary={dictionary} />
+      <Skills dictionary={dictionary} />
+      <Leadership dictionary={dictionary} />
+      <Education dictionary={dictionary} />
+      <Certifications dictionary={dictionary} />
+      <Contact dictionary={dictionary} />
+    </>
   );
 }

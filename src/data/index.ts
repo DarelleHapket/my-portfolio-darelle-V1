@@ -1,5 +1,5 @@
 // src/data/index.ts
-import { SkillsData, Project, Certification, Education, Leadership } from "@/types";
+import { SkillsData, Project, Certification, Education, Leadership,Experience } from "@/types";
 
 // --- Imports Compétences ---
 import { backendSkills } from "./skills/backend";
@@ -29,6 +29,10 @@ import { bachelorMaths } from "./education/bachelor-maths";
 
 // --- Imports Leadership ---
 import { clubGi } from "./leadership/club-gi";
+
+// --Imports Experiences ---
+import { icorpExperience } from "./experience/icorp";
+import { cenadiExperience } from "./experience/cenadi";
 
 
 // ============================================
@@ -67,4 +71,9 @@ export const educationData: Education[] = [
 
 export const leadershipData: Leadership[] = [
   clubGi,
+];
+
+export const experienceData: Experience[] = [
+  icorpExperience,
+  cenadiExperience,
 ];

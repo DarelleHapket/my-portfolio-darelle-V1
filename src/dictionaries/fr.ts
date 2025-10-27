@@ -2,6 +2,31 @@
 
 export const fr = {
 
+
+  contact: {
+    invitation: "Je suis actuellement à la recherche de nouvelles opportunités. N'hésitez pas à me contacter. Je serai ravi d'échanger avec vous.",
+    email: "gabriel.nomo@facsciences-uy1.cm",
+    button: "Dites Bonjour !",
+  },
+
+  about: {
+    paragraph1: "Élève-Ingénieur en Génie Informatique (5e année) spécialisé dans la conception et le développement d'applications web robustes et évolutives.",
+    paragraph2: "Centré sur les écosystèmes Laravel et Next.js, je transforme des problématiques complexes en solutions logicielles performantes, de l'architecture back-end à l'interface utilisateur. Mon engagement est de fournir un code propre, testé et maintenable pour construire des produits fiables et évolutifs."
+  },
+
+  experience: {
+    'icorp': {
+      title: "Chef de Projet & Développeur Laravel",
+      company: "ICORP",
+      description: "Conception, pilotage et développement de A à Z de la plateforme IMA, une application de type ERP pour la gestion des prepas concours."
+    },
+    'cenadi': {
+      title: "Stagiaire Développement Logiciel & IA",
+      company: "CENADI",
+      description: "Conception et développement d'un agent IA d'assistance à l'optimisation fiscale, intégré à une application full-stack (FastAPI & Next.js)."
+    }
+  },
+
   // Métadonnées SEO
   metadata: {
     title: "Gabriel Nomo - Développeur Full-Stack",
@@ -36,6 +61,7 @@ export const fr = {
     education: "Formation",
     certifications: "Certifications",
     contact: "Me Contacter",
+    experience: "Expérience Professionnelle", 
   },
 
   // Contenu textuel par entité (lié par ID)

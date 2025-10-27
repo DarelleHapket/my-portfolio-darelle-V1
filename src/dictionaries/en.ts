@@ -2,6 +2,30 @@
 
 export const en = {
 
+  contact: {
+    invitation: "I'm currently looking for new opportunities. My inbox is always open. Whether you have a question or just want to say hi, I'll get back to you!",
+    email: "gabriel.nomo@facsciences-uy1.cm",
+    button: "Say Hello!",
+  },
+
+  about: {
+    paragraph1: "5th-year Computer Science Engineering student specializing in the design and development of robust and scalable web applications.",
+    paragraph2: "Focused on the Laravel and Next.js ecosystems, I transform complex problems into high-performance software solutions, from back-end architecture to the user interface. My commitment is to deliver clean, tested, and maintainable code to build reliable products."
+  },
+
+  experience: {
+    'icorp': {
+      title: "Project Manager & Laravel Developer",
+      company: "ICORP",
+      description: "Led the end-to-end design, management, and development of the IMA platform, an ERP-like application for managing competitive exam preparation."
+    },
+    'cenadi': {
+      title: "Software Development & AI Intern",
+      company: "CENADI",
+      description: "Designed and developed an AI agent for fiscal optimization, integrated into a full-stack application (FastAPI & Next.js)."
+    }
+  },
+
   // SEO Metadata
   metadata: {
     title: "Gabriel Nomo - Full-Stack Developer",
@@ -36,6 +60,7 @@ export const en = {
     education: "Education",
     certifications: "Certifications",
     contact: "Get in Touch",
+    experience: "Professional Experience",
   },
 
   // Textual content by entity (linked by ID)

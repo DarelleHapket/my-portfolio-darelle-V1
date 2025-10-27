@@ -79,6 +79,13 @@ export interface Service {
   icon: string; // Nom d'une icône pour représenter le service.
 }
 
+/**
+ * Représente une expérience professionnelle.
+ */
+export interface Experience {
+  id: string; // 'icorp' ou 'cenadi'
+  period: string;
+}
 
 // ==================================
 //   Types pour la Structure Globale des Données
@@ -92,3 +99,4 @@ export interface Service {
 export type SkillsData = {
   [categoryKey: string]: Skill[];
 };
+

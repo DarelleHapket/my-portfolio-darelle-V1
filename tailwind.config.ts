@@ -11,10 +11,32 @@ const config: Config = {
   darkMode: 'class',
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      // 1. Définir notre palette de couleurs
+      colors: {
+        // Thème sombre
+        dark: {
+          background: '#1a1625',
+          secondary: '#2a2438',
+          border: '#3d3650',
+          text: '#f1f5f9',
+        },
+        // Thème clair
+        light: {
+          background: '#f8f9fa',
+          secondary: '#ffffff',
+          border: '#e5e7eb',
+          text: '#1e1e1e',
+        },
+        // Couleur d'accent
+        accent: {
+          DEFAULT: '#ff6b35', // Orange foncé pour le thème sombre
+          light: '#d94f2c',   // Orange plus sobre pour le thème clair
+        },
+      },
+      // 2. Définir nos familles de polices
+      fontFamily: {
+        sans: ['var(--font-sora)', 'sans-serif'],
+        mono: ['var(--font-source-code-pro)', 'monospace'],
       },
     },
   },
