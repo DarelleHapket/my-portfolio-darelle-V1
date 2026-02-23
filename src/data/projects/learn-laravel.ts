@@ -8,4 +8,6 @@ export const learnLaravel: Project = {
   mainImageUrl: "/images/projects/php-coding.jpg", // À adapter
   technologies: ["Laravel", "Blade", "PHP"],
   repoUrl: "https://github.com/NOMO-Gabriel/learn-laravel",
+  isFeatured: false,
+  isActive: false,
 };

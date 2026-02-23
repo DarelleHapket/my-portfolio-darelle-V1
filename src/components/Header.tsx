@@ -6,14 +6,21 @@ import Link from 'next/link';
 import { useLanguage } from '@/hooks/useLanguage';
 import LanguageSwitcher from './LanguageSwitcher';
 import ThemeSwitcher from './ThemeSwitcher';
-import Image from 'next/image';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { locale } = useLanguage();
+  const [mounted, setMounted] = useState(false);
 
-  // Liens de navigation traduits
+  // Correction du bug d'hydratation
+  useEffect(() => {
+    setMounted(true);
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const navLinks = locale === 'fr'
     ? [
         { href: '#experience', label: 'Expérience' },
@@ -28,100 +35,68 @@ const Header = () => {
         { href: '#contact', label: 'Contact' }
       ];
 
-  // Détection du scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Fermer le menu mobile au clic
-  const handleNavClick = () => {
-    setIsMobileMenuOpen(false);
-  };
-
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      className={`sticky top-0 left-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#f8f9fa]/80 dark:bg-[#1a1625]/80 backdrop-blur-md shadow-lg'
+          ? 'bg-white/90 dark:bg-[#1a1625]/90 backdrop-blur-md shadow-sm border-b border-light-border dark:border-dark-border'
           : 'bg-white dark:bg-[#1a1625]'
       }`}
     >
-      <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
+      <nav className="container mx-auto px-6 py-4 flex justify-between items-center h-16">
         
-        {/* Logo / Branding  */}
+        {/* Branding */}
         <Link
           href="#home"
-          className="flex items-center gap-3 text-xl font-bold text-light-text dark:text-dark-text hover:text-accent-light dark:hover:text-accent transition-colors"
+          className="text-xl font-bold tracking-tighter text-light-text dark:text-dark-text hover:text-accent transition-colors"
         >
-          <Image
-            src="/images/profile-photo.jpg" // 2. Assurez-vous que ce chemin est correct
-            alt="Gabriel Nomo profile picture"
-            width={60} // 3. Définir la taille
-            height={60}
-            className="rounded-full object-cover" // 4. Rendre l'image ronde
-          />
-          <span>Gabriel Nomo</span>
+          GABRIEL <span className="text-accent">NOMO.</span>
         </Link>
 
-        {/* Navigation Desktop */}
-        <div className="hidden md:flex space-x-8 items-center">
-          {navLinks.map((link, index) => (
+        {/* Navigation Desktop - On n'affiche les liens que si mounted est true */}
+        <div className="hidden md:flex items-center space-x-8">
+          {mounted && navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="group relative text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-500 transition-colors duration-200 font-medium"
+              className="text-sm font-medium text-gray-600 dark:text-gray-300 transition-colors duration-200 hover:text-accent dark:hover:text-accent"
             >
-              <span className="text-orange-600 dark:text-orange-500 text-sm font-mono mr-1">
-                0{index + 1}.
-              </span>
               {link.label}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-600 dark:bg-orange-500 group-hover:w-full transition-all duration-300"></span>
             </Link>
           ))}
+          <div className="flex items-center space-x-2 ml-4 pl-4 border-l border-gray-200 dark:border-gray-700">
+            <LanguageSwitcher />
+            <ThemeSwitcher />
+          </div>
         </div>
 
-        {/* Actions (Language + Theme + Mobile Menu) */}
-        <div className="flex items-center space-x-3">
-          <LanguageSwitcher />
-          <ThemeSwitcher />
-
-          {/* Bouton Menu Mobile */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-[#2a2438] transition-colors"
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? (
-              <svg className="w-6 h-6 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="w-6 h-6 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
-          </button>
+        {/* Bouton Mobile */}
+        <div className="flex items-center space-x-4 md:hidden">
+            <ThemeSwitcher />
+            <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="p-2 text-gray-600 dark:text-gray-300"
+            >
+                {isMobileMenuOpen ? (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                ) : (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
+                )}
+            </button>
         </div>
       </nav>
 
       {/* Menu Mobile */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden border-t border-gray-200 dark:border-[#3d3650] bg-white dark:bg-[#1a1625]">
-          <div className="container mx-auto px-6 py-4 flex flex-col space-y-4">
-            {navLinks.map((link, index) => (
+      {isMobileMenuOpen && mounted && (
+        <div className="md:hidden border-t border-light-border dark:border-dark-border bg-white dark:bg-[#1a1625]">
+          <div className="container mx-auto px-6 py-6 flex flex-col space-y-4">
+            {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                onClick={handleNavClick}
-                className="text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-500 transition-colors font-medium"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-sm font-medium text-gray-600 dark:text-gray-300 transition-colors duration-200 hover:text-accent dark:hover:text-accent"
               >
-                <span className="text-orange-600 dark:text-orange-500 text-sm font-mono mr-2">
-                  0{index + 1}.
-                </span>
                 {link.label}
               </Link>
             ))}

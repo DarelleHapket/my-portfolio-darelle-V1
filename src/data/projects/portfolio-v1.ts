@@ -8,4 +8,6 @@ export const portfolioV1: Project = {
   mainImageUrl: "/images/projects/portfolio-v1.gif", // À adapter
   technologies: ["Next.js", "TypeScript", "React"],
   repoUrl: "https://github.com/NOMO-Gabriel/my-porfolio/tree/cv-septembre-2024", // Lien direct vers la branche
+  isFeatured: false,
+  isActive: false,
 };

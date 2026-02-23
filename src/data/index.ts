@@ -17,6 +17,7 @@ import { blogWebsite } from "./projects/blog-website";
 import { learnLaravel } from "./projects/learn-laravel";
 import { portfolioV1 } from "./projects/portfolio-v1";
 import { portfolioV2 } from "./projects/portfolio-v2";
+import { transens } from "./projects/transens";
 
 // --- Imports Certifications ---
 import { javaEpfl } from "./certifications/java-epfl";

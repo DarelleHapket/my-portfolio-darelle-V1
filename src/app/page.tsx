@@ -9,7 +9,7 @@ import { useLanguage } from '@/hooks/useLanguage';
 import Hero from '@/sections/Hero';
 import About from '@/sections/About';
 import Experience from '@/sections/Experience';
-import Projects from '@/sections/Projects';
+import Projects from '@/sections/Projects/index';
 import Skills from '@/sections/Skills';
 import Leadership from '@/sections/Leadership';
 import Education from '@/sections/Education';

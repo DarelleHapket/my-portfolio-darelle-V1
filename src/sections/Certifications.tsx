@@ -3,8 +3,14 @@ import { en } from '@/dictionaries/en';
 import { certificationsData } from '@/data';
 import Link from 'next/link';
 import Image from 'next/image'; // 1. Importer le composant Image
+import  { useEffect, useState } from 'react';
 
 const Certifications = ({ dictionary }: { dictionary: typeof en }) => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => { setMounted(true); }, []);
+
+  if (!mounted) return null;
   return (
     <section id="certifications" className="py-20 bg-light-secondary dark:bg-dark-secondary">
       <div className="container mx-auto px-6">

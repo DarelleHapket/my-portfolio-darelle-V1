@@ -8,5 +8,7 @@ export const pynfi: Project = {
   mainImageUrl: "/images/projects/pynfi.png",
   technologies: ["Laravel", "Blade", "JavaScript"],
   liveUrl: "https://www.pynfi.com",
-  repoUrl: "https://github.com/NOMO-Gabriel/Pynfi",
+  // repoUrl: "https://github.com/NOMO-Gabriel/Pynfi",
+  isFeatured: true,
+  isActive: true,
 };

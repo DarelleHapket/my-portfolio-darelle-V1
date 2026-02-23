@@ -8,4 +8,6 @@ export const blogWebsite: Project = {
   mainImageUrl: "/images/projects/blog-image.png", 
   technologies: ["Symfony", "PHP", "MySQL", "Twig"],
   repoUrl: "https://github.com/NOMO-Gabriel/Blog",
+  isFeatured: false,
+  isActive: false,
 };

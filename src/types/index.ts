@@ -42,6 +42,25 @@ export interface Project {
   technologies: string[];
   repoUrl?: string;      // Optionnel: URL vers le dépôt GitHub.
   liveUrl?: string;      // Optionnel: URL vers la version en ligne.
+  isFeatured: boolean;  // Indique si le projet doit être mis en avant dans la section Projets.
+  isActive: boolean;    // Indique si le projet est autorisé pour l'affichage sur le site (utile pour les projets en cours de développement ou confidentiels).
+}
+
+/**
+ * Détail complet d'un projet, utilisé pour la page de détail.
+ * Tous les champs sont optionnels car certains projets peuvent ne pas avoir toutes les sections.
+ */
+export interface ProjectDetail {
+  title?: string;
+  shortDescription?: string;
+  problem?: string;
+  role?: string;
+  solution?: string;
+  features?: string[];
+  architecture?: string;
+  challenges?: string;
+  results?: string;
+  perspectives?: string;
 }
 
 /**

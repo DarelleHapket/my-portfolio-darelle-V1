@@ -5,6 +5,7 @@ import "@/styles/global.css";
 import type { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import TopBar from '@/components/TopBar';
 
 // 1. Importer les polices depuis next/font
 import { Sora, Source_Code_Pro } from 'next/font/google';
@@ -23,12 +24,32 @@ const sourceCodePro = Source_Code_Pro({
 });
 
 // Les métadonnées restent les mêmes (elles seront surchargées par le layout de langue)
+// Remplace ton bloc metadata actuel par celui-ci :
 export const metadata: Metadata = {
-  title: "Gabriel Nomo - Développeur Full-Stack",
-  description: "Portfolio de Gabriel Nomo, développeur spécialisé en Laravel et Next.js.",
+  title: "Gabriel Nomo | Ingénieur de Conception Logiciel | Full-Stack & IA",
+  description: "Portfolio de Gabriel Nomo, Ingénieur de Conception spécialisé en architectures Web (Laravel, Next.js) et solutions d'Intelligence Artificielle. Conception de systèmes scalables et sécurisés.",
+  keywords: [
+    "Ingénieur de Conception",
+    "Gabriel Nomo",
+    "Génie Informatique Cameroun",
+    "ENSPY",
+    "Full-Stack Developer",
+    "Laravel",
+    "Next.js",
+    "SaaS",
+    "AI Engineer"
+  ],
   icons: {
     icon: '/favicon.ico',
     apple: '/apple-touch-icon.png',
+  },
+  openGraph: {
+    title: "Gabriel Nomo | Ingénieur de Conception Logiciel",
+    description: "Conception de solutions logicielles robustes et intelligentes.",
+    url: "https://nomo-gabriel-portfolio.vercel.app",
+    siteName: "Portfolio Gabriel Nomo",
+    locale: "fr_FR",
+    type: "website",
   },
 };
 
@@ -44,11 +65,12 @@ export default function RootLayout({
       <body className="bg-light-background dark:bg-dark-background text-light-text dark:text-dark-text font-sans">
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
           <LanguageProvider>
+            <TopBar /> 
             <Header />
             {/* On ajoute un conteneur principal pour centrer le contenu */}
             <main className="pt-20 px-6 sm:px-8 lg:px-12 container mx-auto max-w-6xl">

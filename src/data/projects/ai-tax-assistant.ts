@@ -8,4 +8,6 @@ export const aiTaxAssistant: Project = {
   mainImageUrl: "/images/projects/fiscoai.png",
   technologies: ["FastAPI", "Python", "Next.js", "Tailwind CSS"],
   repoUrl: undefined,
+  isFeatured: false,
+  isActive: true,
 };

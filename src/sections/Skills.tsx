@@ -1,33 +1,50 @@
 // src/sections/Skills.tsx
 "use client";
 
-import SectionTitle from "@/components/ui/SectionTitle";
+import { useEffect, useState } from 'react';
 import SkillTag from "@/components/ui/SkillTag";
 import { skillsData } from "@/data";
 import { en } from '@/dictionaries/en';
-import { useLanguage } from "@/hooks/useLanguage";
 
 const Skills = ({ dictionary }: { dictionary: typeof en }) => {
-  
-  // Object.keys(skillsData) retourne ['backend', 'frontend', 'ai_data', ...]
-  // Ce sont les clés que nous allons utiliser pour chercher les titres traduits.
-  const categories = Object.keys(skillsData) as Array<keyof typeof dictionary.skills>;
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
+  // Ordre d'affichage des catégories
+  const categories = [
+    { key: 'backend', data: skillsData.backend },
+    { key: 'databases', data: skillsData.databases },
+    { key: 'frontend', data: skillsData.frontend },
+    { key: 'ai_data', data: skillsData.ai_data },
+    { key: 'tools_methods', data: skillsData.tools_methods },
+  ];
 
   return (
-    <section id="skills" className="py-20">
+    <section id="skills" className="py-20 bg-white dark:bg-dark-background transition-colors duration-300">
       <div className="container mx-auto px-6">
-        <SectionTitle>{dictionary.sectionTitles.skills}</SectionTitle>
+        <h2 className="text-3xl font-bold mb-16 text-center text-light-text dark:text-dark-text tracking-tight">
+          {dictionary.sectionTitles.skills}
+        </h2>
         
-        <div className="space-y-12">
-          {categories.map((categoryKey) => (
-            <div key={categoryKey}>
-              {/* Titre de la catégorie, ex: "Back-End" */}
-              <h3 className="text-xl font-semibold mb-6 text-gray-700 dark:text-gray-300 border-b-2 border-accent/20 pb-2">
-                {dictionary.skills[categoryKey]}
-              </h3>
-              {/* Grille des tags de compétences */}
-              <div className="flex flex-wrap gap-3">
-                {skillsData[categoryKey].map((skill) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-10">
+          {categories.map((cat) => (
+            <div key={cat.key} className="flex flex-col">
+              {/* En-tête de catégorie */}
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-1 h-6 bg-accent rounded-full"></div>
+                <h3 className="text-sm font-black text-gray-900 dark:text-gray-100 uppercase tracking-[0.2em]">
+                  {dictionary.skills[cat.key as keyof typeof dictionary.skills]}
+                </h3>
+              </div>
+
+              {/* Grille de tags */}
+              <div className="flex flex-wrap gap-2">
+                {cat.data.map((skill) => (
                   <SkillTag key={skill.name} name={skill.name} />
                 ))}
               </div>
