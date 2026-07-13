@@ -25,8 +25,8 @@ const About = ({ dictionary }: { dictionary: typeof en }) => {
   const sectionRef = useRef<HTMLElement>(null);
 
   const projects   = useCounter(5, triggered);
-  const hackathons = useCounter(2, triggered);
-  const experience = useCounter(2, triggered);
+  const hackathons = useCounter(3, triggered);
+  const experience = useCounter(3, triggered);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
