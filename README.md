@@ -2,11 +2,11 @@
 
 This is my personal portfolio built with **Next.js**, showcasing my projects, skills, certifications, and services.
 
-## 📸 Demo
+<!-- ## 📸 Demo
 
-![Portfolio Demo](./public/images/projects/portfolio-v2.png)
+<!-- ![Portfolio Demo](./public/images/projects/portfolio-v2.png) -->
 
-## 🌐 Live Preview
+## 🌐 Live Preview -->
 
 Check it out live here: [Portfolio Live](#)
 
