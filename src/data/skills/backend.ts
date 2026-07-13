@@ -1,10 +1,13 @@
-// src/data/skills/backend.ts
-
 import { Skill } from "@/types";
+
 export const backendSkills: Skill[] = [
-  { name: "Laravel" },
-  { name: "Symfony" },
-  { name: "Spring Boot (REST & WebFlux)" },
-  { name: "Django" },
-  { name: "FastAPI" },
+  { name: "Python",      percentage: 70 },
+  { name: "Django",      percentage: 65 },
+  { name: "API REST",    percentage: 60 },
+  { name: "Spring Boot", percentage: 55 },
+  { name: "Java",        percentage: 75 },
+  { name: "PHP",         percentage: 50 },
+  { name: "LARAVEL",     percentage: 40 },
+
+
 ];

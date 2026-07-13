@@ -29,13 +29,13 @@ const projectDetails: Record<string, {
   },
   caas: {
     problem: "Les plateformes qui souhaitent intégrer un module de messagerie doivent développer leur propre système de chat, coûteux en temps et en ressources.",
-    role: "Développeuse Back-End (Projet Académique — ENSPY).",
+    role: "Développeuse Back-End (Projet Personnel).",
     solution: "Système de Chat as a Service multitenant permettant à plusieurs applications d'intégrer un module de messagerie via une API unifiée.",
-    features: ["Architecture multitenant", "API REST documentée", "Isolation des données par tenant", "Messagerie temps réel via WebSocket", "Streaming d'événements avec Kafka"],
+    features: ["Architecture multitenant", "API REST documentée", "Isolation des données par tenant", "Intégration simplifiée via API"],
     architecture: "Spring Boot avec architecture REST, base de données MySQL.",
     challenges: "Garantir l'isolation complète des données entre les différents tenants.",
     results: "Backend fonctionnel disponible sur GitLab.",
-    // perspectives: "Ajout WebSocket pour messagerie temps réel.",
+    perspectives: "Ajout WebSocket pour messagerie temps réel.",
   },
   "todo-app": {
     problem: "Besoin d'une application de gestion de tâches complète avec authentification sécurisée.",

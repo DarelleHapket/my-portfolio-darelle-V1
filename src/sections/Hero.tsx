@@ -1,89 +1,45 @@
-// src/sections/Hero.tsx
 "use client";
 
-import { useEffect, useState } from 'react';
-import { en } from '@/dictionaries/en';
-import Link from 'next/link';
+import { en } from "@/dictionaries/en";
 
-interface HeroProps {
-  dictionary: typeof en;
-}
-
-const Hero = ({ dictionary }: HeroProps) => {
-  const [mounted, setMounted] = useState(false);
-
-  // Correction du bug d'hydratation : on attend que le client soit prêt
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  // Pendant le rendu serveur, on affiche une structure vide de même hauteur
-  // pour éviter le "layout shift" et les erreurs de texte.
-  if (!mounted) {
-    return <section className="min-h-[70vh] flex items-center container mx-auto px-6" />;
-  }
-
+const Hero = ({ dictionary }: { dictionary: typeof en }) => {
   return (
-    <section id="home" className="min-h-[80vh] flex flex-col justify-center py-12 md:py-20">
-      <div className="container mx-auto px-6">
-        
-        {/* Badge de spécialité - Look Ingénieur */}
-        <div className="inline-flex items-center gap-3 px-3.5 py-1.5 rounded-md bg-orange-50 dark:bg-orange-500/10 border border-orange-200 dark:border-orange-500/20 mb-8 transition-all">
-          {/* Indicateur d'état (Dot) */}
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-600 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-600"></span>
-          </span>
-          
-          {/* Texte du titre */}
-          <span className="text-sm font-semibold text-orange-900 dark:text-orange-400 tracking-tight">
-            {dictionary.hero.subtitle_1}
-          </span>
-        </div>
-
-        {/* Titre Massif & Statique */}
-        <h1 className="text-4xl md:text-7xl font-bold text-light-text dark:text-dark-text mb-6 tracking-tight leading-[1.1]">
+    <section
+      id="home"
+      className="hero-gradient min-h-screen flex items-center justify-center text-center text-white px-6"
+    >
+      <div className="max-w-3xl mx-auto">
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight">
           {dictionary.hero.title}
         </h1>
 
-        {/* Tagline orientée Conception */}
-        <p className="max-w-2xl text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-10 leading-relaxed font-medium">
+        <h2 className="text-xl md:text-2xl mb-6 opacity-90 font-medium">
+          {dictionary.hero.subtitle}
+        </h2>
+
+        <p className="text-base md:text-lg opacity-80 max-w-2xl mx-auto mb-10 leading-relaxed">
           {dictionary.hero.tagline}
         </p>
 
-        {/* CTAs : 2 boutons maximum */}
-        <div className="flex flex-col sm:flex-row gap-5 items-start sm:items-center">
-           
-          {/* Bouton 1 : Télécharger le CV (Primaire) */}
-          <Link 
-            href={dictionary === en ? "/CV_NOMO_GABRIEL_23_02_2026_EN.pdf" : "/CV_NOMO_GABRIEL_23_02_2026_FR.pdf"} 
-            download
-            className="
-              inline-flex px-8 py-4 rounded-lg font-bold shadow-lg transition-all duration-300 border-2 
-              /* Mode Clair */
-              bg-accent text-white border-accent hover:bg-white hover:text-accent 
-              /* Mode Sombre */
-              dark:hover:bg-dark-background dark:hover:text-accent
-              text-center w-full sm:w-auto
-            "
+        <div className="flex gap-4 justify-center flex-wrap">
+          <a
+            href="#projects"
+            className="btn-shimmer px-8 py-3 bg-white text-accent font-bold rounded-full shadow-lg hover:-translate-y-1 hover:scale-105 hover:shadow-blue-300 transition-all duration-300 inline-flex items-center gap-2"
           >
-            {dictionary.hero.download_cv}
-          </Link>
-          
-          {/* Bouton 2 : Découvrir mes projets (Secondaire) */}
-          <Link 
-            href="#projects" 
-            className="
-              inline-flex px-8 py-4 rounded-lg font-bold transition-all duration-300 border-2 
-              /* Mode Clair */
-              bg-transparent border-light-border text-light-text hover:bg-accent hover:border-accent hover:text-white
-              /* Mode Sombre */
-              dark:border-dark-border dark:text-dark-text dark:hover:bg-accent dark:hover:border-accent dark:hover:text-white
-              text-center w-full sm:w-auto
-            "
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+            {dictionary.hero.cta_projects}
+          </a>
+          <a
+            href="#contact"
+            className="btn-shimmer px-8 py-3 bg-transparent text-white font-bold rounded-full border-2 border-white hover:-translate-y-1 hover:scale-105 hover:bg-white/10 transition-all duration-300 inline-flex items-center gap-2"
           >
-            {dictionary.hero.project_link}
-          </Link>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            {dictionary.hero.cta_contact}
+          </a>
         </div>
       </div>
     </section>

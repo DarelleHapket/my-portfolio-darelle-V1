@@ -1,11 +1,8 @@
-// src/data/skills/ai-data.ts
 import { Skill } from "@/types";
 
 export const aiDataSkills: Skill[] = [
-  { name: "Python" },
-  { name: "Machine Learning" },
-  { name: "Deep Learning (CNN)" },
-  { name: "Intelligent Agents" },
-  { name: "Logic Programming" },
-  { name: "MLflow" },
+  { name: "Data Analysis", percentage: 60 },
+  { name: "Pandas",        percentage: 60 },
+  { name: "NumPy",         percentage: 60 },
+  { name: "Matplotlib",    percentage: 60 },
 ];

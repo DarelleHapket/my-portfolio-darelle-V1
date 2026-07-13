@@ -1,4 +1,3 @@
-// tailwind.config.ts
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -11,32 +10,45 @@ const config: Config = {
   darkMode: 'class',
   theme: {
     extend: {
-      // 1. Définir notre palette de couleurs
       colors: {
-        // Thème sombre
         dark: {
-          background: '#1a1625',
-          secondary: '#2a2438',
-          border: '#3d3650',
-          text: '#f1f5f9',
+          background: '#18191A',
+          secondary: '#242526',
+          border: '#3E4042',
+          text: '#E4E6EA',
         },
-        // Thème clair
         light: {
           background: '#f8f9fa',
           secondary: '#ffffff',
           border: '#e5e7eb',
-          text: '#1e1e1e',
+          text: '#333333',
         },
-        // Couleur d'accent
         accent: {
-          DEFAULT: '#ff6b35', // Orange foncé pour le thème sombre
-          light: '#d94f2c',   // Orange plus sobre pour le thème clair
+          DEFAULT: '#1877f2',
+          light: '#1565C0',
+          hero: '#42A5F5',
         },
       },
-      // 2. Définir nos familles de polices
       fontFamily: {
-        sans: ['var(--font-sora)', 'sans-serif'],
+        sans: ['var(--font-sora)', 'Arial', 'sans-serif'],
         mono: ['var(--font-source-code-pro)', 'monospace'],
+      },
+      backgroundImage: {
+        'hero-gradient': 'linear-gradient(135deg, #1877f2, #42A5F5)',
+      },
+      animation: {
+        'rotate-slow': 'rotate 3s linear infinite',
+        'skill-fill': 'skillFill 1s ease forwards',
+      },
+      keyframes: {
+        rotate: {
+          from: { transform: 'rotate(0deg)' },
+          to: { transform: 'rotate(360deg)' },
+        },
+        skillFill: {
+          from: { width: '0%' },
+          to: { width: 'var(--skill-width)' },
+        },
       },
     },
   },
